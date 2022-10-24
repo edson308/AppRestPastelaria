@@ -1,12 +1,44 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Cliente</title>
-</head>
-<body>
-<h1>Rota da página de CLIENTES da nossa WEB APP</h1>
-<h1>Uso de render_template</h1>
-<h2>By Edson Amarante </h2>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Cliente{% endblock %}
+
+{% block content %}
+<div class="writer">
+
+<form action="{{ url_for('cliente.formCliente') }}" method="POST">
+    <h1>cliente</h1>
+    <button class="btn btn-secondary"type="submit" name="formNovo">Novo Cliente</button>
+</form>
+
+
+
+    <table class="formt">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Compra_fiado</th>
+                    <th scope="col">Dia_fiado</th>
+                    <th scope="col">Senha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">...</th>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td><i class="fas fa-edit"></i></td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
+
