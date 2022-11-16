@@ -5,19 +5,20 @@
 {% block content %}
 
   <body>
+    
+    
+    
+    
     <div id="main-container">
 
       <h1>Cadastro de Funcionario</h1>
-      <form id="register-form" action="">
+      <form name="funcionario" id="form" action="{{ url_for('funcionario.insert') }}" method="POST">
 
-        <!-- <div class="full-box">
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" placeholder="Digite seu e-mail" data-min-length="2" data-email-validate>
-        </div> -->
+       
 
         <div class="half-box spacing">
             <label for="name">Nome</label>
-            <input type="text" name="name" id="name" placeholder="Digite seu nome" data-required data-min-length="3" data-max-length="16">
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required >
         </div>
 
         <div class="half-box">
@@ -27,54 +28,31 @@
 
         <div class="half-box spacing">
           <label for="name">CPF</label>
-          <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" data-required data-min-length="12" data-max-length="12">
+          <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" data-required >
       </div>
 
       <div class="half-box">
         <label for="lastname">Telefone</label>
-        <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000" data-required data-max-length="11" >
+        <input type="tel" name="telefone" id="telefone" placeholder="(00)00000-0000"  >
     </div>
-
-    
-      <legend>Selecione o grupo:</legend>
-  <div class="half-box spacing">
-    <label for="caixa">Caixa</label>
-    <input type="radio" name="radii" id="caixa"   >
-  </div>
-
-  <div class="half-box ">
-    <label for="balcao">Balcão</label>
-  <input type="radio" name="radii" id="balcao"  >
-  </div>
-
-
-
-
-
+    <label for="grupo">Grupo</label>
+    <select name="grupo" id="grupo" aria-label="Grupo">
+      <option value="0">Atendente</option>
+      <option value="1">Caixa</option>
+      <option value="2">Adm</option>
+      </select>
+     
   
-
- 
-
-
-
-
-
-    
-    
-
-
-  
-
 
 
         <div class="half-box spacing">
           <label for="lastname">Senha</label>
-          <input type="password" name="password" id="password" placeholder="Digite sua senha" data-password-validate data-required>
+          <input type="password" name="senha" id="password" placeholder="Digite sua senha" >
         </div>
 
         <div class="half-box">
           <label for="passconfirmation">Confirmação de senha</label>
-          <input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" data-equal="password">
+          <input type="password" name="passconfirmation" id="passwordconfirmation" placeholder="Digite novamente sua senha" >
         </div>
 
         <div>
@@ -83,12 +61,15 @@
         </div>
 
         <div class="full-box">
-          <input id="btn-submit" type="submit" value="Registrar">
+          <input id="btn-submit" type="submit" name="salva" value="Registrar">
         </div>
       </form>
     </div>
-    <p class="error-validation template"></p>
-    <script src="js/scripts.js"></script>
+
+
+
+    <!-- <p class="error-validation template"></p>
+    <script src="js/scripts.js__"></script> -->
   </body>
 
  

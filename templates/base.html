@@ -52,8 +52,7 @@
     
         
 
-
-
+      
 
 
     
@@ -69,7 +68,56 @@
     <script src="{{ url_for('static', filename='fontawesome-free-6.2.0-web/js/all.js') }}"></script>
     <script src="{{ url_for('static', filename='mobile-navbar.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='sweetalert2/sweetalert2.all.min.js') }}"></script>
    
+    {% if request.args.get('msg'): %}
+    <script>
+         Swal.fire({
+             title: 'Sucesso',
+             text: '{{ request.args.get("msg") }}',
+             icon: 'success',
+             confirmButtonText: 'OK'
+         });
+      </script>
+      {% elif msg: %}
+      <script>
+          Swal.fire({
+              title: 'Sucesso',
+              text: '{{ msg }}',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% elif request.args.get('msgErro'): %}
+      <script>
+          Swal.fire({
+              title: 'Erro',
+              text: "{{ request.args.get('msgErro') }}",
+              icon: 'error',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% elif msgErro: %}
+      <script>
+          Swal.fire({
+              title: 'Erro',
+              text: '{{ msgErro }}',
+              icon: 'error',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% endif %}
+
+      <!-- <script>
+          Swal.fire({
+              title: 'Teste!',
+              text: 'sweetalert2 funcionando!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          });
+        </script> -->
+
+
 </body>
 
 </html>
