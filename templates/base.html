@@ -40,6 +40,7 @@
           <li><a href="{{ url_for('funcionario.formListaFuncionario') }}">Funcionários</a></li>
           <li><a href="{{ url_for('cliente.formListaCliente') }}">Clientes</a></li>
           <li><a href="{{ url_for('produto.formListaProduto') }}">Produtos</a></li>
+          <li><a href="{{ url_for('login.logoff') }}"><i class="fas fa-door-open"></i> SAIR</a></li>
         </ul>
       </nav>
       
@@ -64,10 +65,15 @@
     {% endblock %}
     {% block js %}
     {% endblock %}
+    
+    
+    <script src="{{ url_for('static', filename='mobile-navbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery-3.6.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-5.2.1-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
     <script src="{{ url_for('static', filename='bootstrap-5.2.2-dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='fontawesome-free-6.2.0-web/js/all.js') }}"></script>
-    <script src="{{ url_for('static', filename='mobile-navbar.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
     <script src="{{ url_for('static', filename='sweetalert2/sweetalert2.all.min.js') }}"></script>
    
     {% if request.args.get('msg'): %}

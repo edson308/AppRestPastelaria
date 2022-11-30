@@ -7,6 +7,10 @@
 
 {% block content %}
 
+{% if 'login' in session %}
+Bem-vindo <b>{{ session['login'] }}</b>
+{% endif %}
+
 <main>
 
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">

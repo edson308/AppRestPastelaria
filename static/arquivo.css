@@ -111,6 +111,12 @@
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
   }
+#fmlogin{
+  background-color: #c5fa06;
+}
+
+
+
 
   /* body{
     background-color: darkgray;
@@ -131,7 +137,7 @@
     width: 100%;
   }
   a {
-    color: #E60084;
+    color: #e60000;
   }
   body {
     /*padding-top: 5vh;*/
@@ -149,11 +155,24 @@
     border-radius: 10px;
     padding: 25px;
   }
+
   #main-container h1 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.6rem;
   }
+
+  #login-container {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    background-color: #FFF;
+    border-radius: 25px;
+    padding: 50px;
+    
+  }
+ 
   form {
     display: flex;
     flex-wrap: wrap;
@@ -184,7 +203,7 @@
     border-color: #E60084;
   }
   input[type="submit"] {
-    background-color: #E60084;
+    background-color: #e60000;
     color: #FFF;
     border: none;
     border-radius: 20px;
@@ -232,3 +251,8 @@ h5{
   color: #000000;
   font-size: xx-large;
 }
+
+
+
+
+
