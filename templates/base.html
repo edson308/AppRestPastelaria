@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-5.2.2-dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.2.0-web/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='arquivo.css') }}">
+        
+
+        <title>{% block title %}{% endblock %} - AbcBolinhas</title>
+
+        {% block style %}{% endblock %}
+        <style>
+            .important {
+                color: #6495ED;
+            }
+
+        </style>
+</head>
+
+<body>
+    {% block menu %}
+
+
+
+    <nav>
+        <a class="logo" href="/">Pastelaria</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+          <li><a href="{{ url_for('index.formListaIndex') }}">Início</a></li>
+          <li><a href="{{ url_for('funcionario.formListaFuncionario') }}">Funcionários</a></li>
+          <li><a href="{{ url_for('cliente.formListaCliente') }}">Clientes</a></li>
+          <li><a href="{{ url_for('produto.formListaProduto') }}">Produtos</a></li>
+          <li><a href="{{ url_for('login.logoff') }}"><i class="fas fa-door-open"></i> SAIR</a></li>
+        </ul>
+      </nav>
+      
+    
+
+    
+
+
+
+    
+        
+
+      
+
+
+    
+    
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+    &copy; Copyright 2022 by <a href="http://127.0.0.1:5000/">AbcBolinhas</a>.
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+    
+    
+    <script src="{{ url_for('static', filename='mobile-navbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery-3.6.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='jquery.maskedinput.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-5.2.1-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap-5.2.2-dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='fontawesome-free-6.2.0-web/js/all.js') }}"></script>
+    <script src="{{ url_for('static', filename='sweetalert2/sweetalert2.all.min.js') }}"></script>
+   
+    {% if request.args.get('msg'): %}
+    <script>
+         Swal.fire({
+             title: 'Sucesso',
+             text: '{{ request.args.get("msg") }}',
+             icon: 'success',
+             confirmButtonText: 'OK'
+         });
+      </script>
+      {% elif msg: %}
+      <script>
+          Swal.fire({
+              title: 'Sucesso',
+              text: '{{ msg }}',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% elif request.args.get('msgErro'): %}
+      <script>
+          Swal.fire({
+              title: 'Erro',
+              text: "{{ request.args.get('msgErro') }}",
+              icon: 'error',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% elif msgErro: %}
+      <script>
+          Swal.fire({
+              title: 'Erro',
+              text: '{{ msgErro }}',
+              icon: 'error',
+              confirmButtonText: 'OK'
+          });
+      </script>
+      {% endif %}
+
+      <!-- <script>
+          Swal.fire({
+              title: 'Teste!',
+              text: 'sweetalert2 funcionando!',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          });
+        </script> -->
+
+
+</body>
+
+</html>
