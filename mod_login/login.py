@@ -6,33 +6,12 @@ import requests
 bp_login = Blueprint('login', __name__, url_prefix='/', template_folder='templates')
 
 headers = {'x-token': 'abcBolinhasToken', 'x-key': 'abcBolinhasKey'}
-url_login = "http://localhost:8000/teste/"
+url_login = "http://localhost:8000/login/"
 
 @bp_login.route("/", methods=['GET', 'POST'])
 def login():
     return render_template("formLogin.html")
 
-# @bp_login.route('/login', methods=['POST'])
-# def validaLogin():
-#     try:
-#     # dados enviados via FORM
-#         cpf = request.form['usuario']
-#         senha = Funcoes.cifraSenha(request.form['senha'])
-        
-#         # limpa a sessão
-#         session.clear()
-
-#         if (cpf == "Edson" and senha == Funcoes.cifraSenha('Bolinhas')):
-#             session['login']=cpf
-
-#              # abre a aplicação na tela home
-#             return redirect(url_for('index.formListaIndex'))
-#         else:
-#             raise Exception("Falha de Login! Verifique seus dados e tente novamente!")
-
-#     except Exception as e:
-#         # retorna para a tela de login
-#         return redirect(url_for('login.login', msgErro=e.args[0]))
 
 
 

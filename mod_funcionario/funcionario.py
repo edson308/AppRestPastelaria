@@ -15,6 +15,7 @@ headers = {'x-token': 'abcBolinhasToken', 'x-key': 'abcBolinhasKey'}
 
 ''' rotas dos formulários '''
 @bp_funcionario.route('/', methods=['GET','POST'])
+@validaSessao
 def formListaFuncionario():
     try:
         response = requests.get(urlApiFuncionarios, headers=headers)
